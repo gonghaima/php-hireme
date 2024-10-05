@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HireMe - Web UI</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.svg">
+    <meta name="title" content="HireMe" />
+    <link rel="preload" fetchpriority="high" as="image" href="./assets/logo.svg" type="image/webp" />  
+    <link type="text/css" rel="stylesheet" href="style.css" />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link href="app.css" rel="stylesheet">
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		var industries = [
+			"Manufacturing", "Legal", "Enterainment", "Military", "Government"
+		]
+		var occupations = [
+			"Information Technology architect", "Information Security Engineer", "Accountant", "Janitor", "Cyber Security Analyst", "Software Engineer"
+		]
+		var countries = [
+			"United States", "Canada", "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and/or Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Cook Islands", "Costa Rica", "Croatia (Hrvatska)", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecudaor", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "France, Metropolitan", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard and Mc Donald Islands", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kosovo", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfork Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia South Sandwich Islands", "South Sudan", "Spain", "Sri Lanka", "St. Helena", "St. Pierre and Miquelon", "Sudan", "Suriname", "Svalbarn and Jan Mayen Islands", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States minor outlying islands", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City State", "Venezuela", "Vietnam", "Virigan Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zaire", "Zambia", "Zimbabwe"
+		]
+	</script>
+	<script src="app.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  </head>
+  <body class="loggedinuser">
+  
+	<div id="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id ="hiremelogo">
+						<img src="assets/logo-1.png">
+					</div>
+					<ul id="app-header-menu">
+						<li><a href="#">Messages</a></li>
+						<li><a href="#">Company</a></li>
+						<li><a href="#">Pricing</a></li>
+					</ul>
+					<div id ="userheader-info">
+						<div>
+							<div class="user-profile-thumb-round">
+								<img src="assets/sample_userprofile.jpg">
+							</div>
+							<span>Mr CEO</span>
+						</div>
+					</div>
+					<input class="menu-btn" type="checkbox" id="menu-btn" />
+					<label class="menu-icon" for="menu-btn"><span class="navicon">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="content-section bg-white margin-bottom">
+						<div class="">
+							<img class="round-border" src="assets/sample_userprofile.jpg">
+						</div>
+						<p><button type="" class="btn btn-lg btn-success contact-button">Write a message</button></p>
+						<hr></hr>
+						<p><a class="googicon chat">Add to chat</a></p>
+						<p><a class="googicon addfavorites">Add to favorites</a></p>
+						<p><a class="googicon problem">Report a problem</a></p>
+					</div>
+					<div class="content-section bg-white margin-bottom">
+						<h4>I am lookign for</h4>
+						<span class="select-button">IT</span>
+						<span class="select-button">Guy</span>
+						<span class="select-button">Girl</span>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="content-section bg-white margin-bottom">
+						<h3>Penny, 21</h3>
+						<span>CEO of HireMe</span>
+						<div class="row">
+							<div class="col-md-2">City:</div>
+							<div class="col-md-3">new York:</div>
+						</div>
+						<div class="row">
+							<div class="col-md-2">Website:</div>
+							<div class="col-md-3">https://website.com</div>
+						</div>
+						<div style="height:400px"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Demo - messages</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="content-section bg-green margin-bottom">
+						<div class="messages-sidebar">
+							<div class="summary">
+								<label>Messages: </label>
+								<label class="messagecount">15</label>
+								<button class="add-item material-symbols-outlined">add</button>
+							</div>
+							<hr />
+							<div class="summary">
+								<div class="form-group">
+									<input type="text" class="form-control" id="searchmessage" placeholder="Search messages">
+								</div>
+							</div>
+							<hr />
+							<div class="message-nav-list">
+								<ul>
+									<li>
+										<img class="msg_person_thumb" src="assets/sample_userprofile.jpg">
+										<span class="name">Julie M</span>
+										<span class="last-message">Yo! What you doing man? Gimme a job i need money</span>
+										<div>
+											<span class="message-tag">Request</span><span class="message-tag">Question</span>
+										</div>
+										<span class="timeago">2h</span>
+									</li>
+									<li>
+										<img class="msg_person_thumb" src="assets/sample_userprofile.jpg">
+										<span class="name">Julie M</span>
+										<span class="last-message">Yo! What you doing man? Gimme a job i need money</span>
+										<div>
+											<span class="message-tag">Request</span><span class="message-tag">Question</span>
+										</div>
+										<span class="timeago">2h</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="content-section bg-lightgreen margin-bottom">
+						a
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+  </body>
+</html>

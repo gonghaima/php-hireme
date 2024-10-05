@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat UI</title>
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar Section -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div id="hiremelogo">
+                    <img src="assets/logo-1.png">
+                </div>
+                <!-- Dropdown Menu -->
+                <div class="dropdown">
+                    <button class="dropdown-toggle">Messages</button>
+                    <div class="dropdown-content">
+                        <a href="#">All Messages</a>
+                        <a href="#">Unread Messages</a>
+                        <a href="#">Starred Messages</a>
+                    </div>
+                </div>
+                <input type="text" placeholder="Search messages" class="search-box">
+            </div>
+            <div class="sidebar-chats">
+                <!-- Chat Items -->
+                <div class="chat-item active">
+                    <img src="https://via.placeholder.com/50" alt="User" class="chat-avatar">
+                    <div class="chat-details">
+                        <div class="chat-user">Lavern Laboy</div>
+                        <div class="chat-last-message">Haha that's terrifying 😱</div>
+                    </div>
+                    <span class="chat-timestamp">24m</span>
+                </div>
+                <div class="chat-item">
+                    <img src="https://via.placeholder.com/50" alt="User" class="chat-avatar">
+                    <div class="chat-details">
+                        <div class="chat-user">Julie</div>
+                        <div class="chat-last-message">Hahah oh man 🤣</div>
+                    </div>
+                    <span class="chat-timestamp">10m</span>
+                </div>
+                <div class="chat-item">
+                    <img src="https://via.placeholder.com/50" alt="User" class="chat-avatar">
+                    <div class="chat-details">
+                        <div class="chat-user">Titus Kitamura</div>
+                        <div class="chat-last-message">This is amazing</div>
+                    </div>
+                    <span class="chat-timestamp">5m</span>
+                </div>
+                <div class="chat-item">
+                    <img src="https://via.placeholder.com/50" alt="User" class="chat-avatar">
+                    <div class="chat-details">
+                        <div class="chat-user">Geoffroy Mott</div>
+                        <div class="chat-last-message">Just ideas for next time</div>
+                    </div>
+                    <span class="chat-timestamp">1m</span>
+                </div>
+                <div class="chat-item">
+                    <img src="https://via.placeholder.com/50" alt="User" class="chat-avatar">
+                    <div class="chat-details">
+                        <div class="chat-user">Alfonzo Schuessler</div>
+                        <div class="chat-last-message">Perfect!</div>
+                    </div>
+                    <span class="chat-timestamp">30s</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Section -->
+        <div class="chat-main">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <img src="https://via.placeholder.com/50" alt="User" class="chat-header-avatar">
+                <div class="chat-header-details">
+                    <h3>Florencio Dorrance</h3>
+                    <span class="chat-status">Online</span>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages">
+                <!-- Message Bubbles -->
+                <div class="message received">
+                    <p>omg, this is amazing</p>
+                </div>
+                <div class="message sent">
+                    <p>How are you?</p>
+                </div>
+                <div class="message received">
+                    <p>perfect 😍</p>
+                </div>
+                <div class="message sent">
+                    <p>Woohoo 🔥</p>
+                </div>
+                <div class="message received">
+                    <p>just ideas for next time</p>
+                </div>
+                <div class="message sent">
+                    <p>I'll be there in 2 mins ⏳</p>
+                </div>
+                <div class="message received">
+                    <p>Wow, this is really epic</p>
+                </div>
+            </div>
+
+            <!-- Message Input -->
+            <div class="chat-input">
+                <button class="attachment-button"><i class="fas fa-paperclip"></i></button>
+                <input type="text" placeholder="Type a message" class="message-input">
+                <button class="send-button"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

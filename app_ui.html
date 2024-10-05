@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HireMe - Web UI</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.svg">
+    <meta name="title" content="HireMe" />
+    <link rel="preload" fetchpriority="high" as="image" href="./assets/logo.svg" type="image/webp" />  
+    <link type="text/css" rel="stylesheet" href="style.css" />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link href="app.css" rel="stylesheet">
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		var industries = [
+			"Manufacturing", "Legal", "Enterainment", "Military", "Government"
+		]
+		var occupations = [
+			"Information Technology architect", "Information Security Engineer", "Accountant", "Janitor", "Cyber Security Analyst", "Software Engineer"
+		]
+		var countries = [
+			"United States", "Canada", "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and/or Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Cook Islands", "Costa Rica", "Croatia (Hrvatska)", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecudaor", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "France, Metropolitan", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard and Mc Donald Islands", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kosovo", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfork Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia South Sandwich Islands", "South Sudan", "Spain", "Sri Lanka", "St. Helena", "St. Pierre and Miquelon", "Sudan", "Suriname", "Svalbarn and Jan Mayen Islands", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States minor outlying islands", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City State", "Venezuela", "Vietnam", "Virigan Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zaire", "Zambia", "Zimbabwe"
+		]
+	</script>
+	<script src="app.js"></script>
+
+  </head>
+  <body>
+  
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<img id="logo" src="assets/logo-1.png">
+				<h1>Jobseeker Sign up</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<form onsubmit="event.preventDefault();">
+					<h4 id="form-step">Step 1</h4>
+					<div class="progress">
+						<div class="progress-bar bg-success" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					
+					<!-- Signup form slider -->
+					<div id="signup-form-slider" data-currentslide="0">
+						<div class="steps">
+							<!-- Slide 1 -->
+							<div class="step" data-step="1">
+									<div class="form-group">
+										<label for="exampleInputEmail1">Email address</label>
+										<span class="validationbox">Example validaiton error</span>
+										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+										
+										<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+									</div>
+									<div class="form-group">
+										<label for="exampleInputPassword1">Password</label>
+										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+									</div>
+									<div class="form-group">
+										<label for="confirmpassword">Confirm password</label>
+										<input type="confirmpassword" class="form-control" id="confirmpassword" placeholder="Password">
+									</div>
+							</div>
+							<!-- Slide 2 -->
+							<div class="step" data-step="2">
+									<div class="form-group">
+										<label for="country">Country</label>
+										<input type="text" class="form-control country-select" id="country" aria-describedby="countryHelp" placeholder="Enter country">
+									</div>
+									<div class="form-group">
+										<label for="country">Phone number</label>
+										<input type="text" class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Enter phone number">
+									</div>
+									<div class="form-group">
+										<label for="address">Address</label>
+										<input type="address" class="form-control" id="address" placeholder="address">
+									</div>
+							</div>
+							<!-- Slide 3 -->
+							<div class="step" data-step="2">
+									<div class="form-group">
+										<label for="occupation">Occupation</label>
+										<input type="text" class="form-control occupation-select" id="occupation" aria-describedby="occupationHelp" placeholder="Enter occupation">
+									</div>
+									<div class="form-group">
+										<label for="industry">Industry</label>
+										<input type="text" class="form-control industry-select" id="industry" aria-describedby="industryHelp" placeholder="Enter industry">
+									</div>
+									<div class="form-group">
+										<label for="experience">Work experience</label>
+										<input type="experience" class="form-control" id="experience" placeholder="experience">
+									</div>
+									<div class="row">
+										<div class="col-md-4">
+											<label for="fromdate">From</label>
+											<input type="text" id="fromdate" class="form-control datepicker">
+										</div>
+										<div class="col-md-8">
+											<label for="fromdate">To</label>
+											<input type="text" id="todate" class=" form-control datepicker">
+										</div>
+									</div>
+							</div>
+							<!-- Slide 4 -->
+							<div class="step" data-step="2">
+									<div class="row">
+										<div class="col-md-6">
+											<button class="img-button"><span>Upload CV</span><img src="assets/resume.svg"</button>
+										</div>
+										<div class="col-md-6">
+										<div class="col-md-6">
+											<button class="img-button"><span>Upload Picture</span><img src="assets/profile.svg"</button>
+										</div>
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Signup form slider -->
+					<div class="row">
+						<div class="col-md-6" style="text-align:right">
+							
+						</div>
+						<div class="col-md-6" style="text-align:right">
+							<button type="" class="btn btn-lg btn-success slide-prev disabled">Previous</button>
+							<button type="" class="btn btn-lg btn-success slide-next">Next</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<div class="col-md-6">
+				<div class="info">
+					<div class="info-top">
+						<div class="row1"></div>
+						<div class="row2"></div>
+						<div class="row3"></div>
+					</div>
+					<div class="info-content">
+							<h3>What our Job Seekers said</h3>
+							<blockquote><span>Whenever you see a successful business, someone once made a courageous decision. ~Peter F. Drucker</span></blockquote>
+							<div style="height:30px;"></div>
+							<div class="row">
+								<button class="round-go-left"></button>
+								<button class="round-go-right"></button>
+							</div>
+							
+						<div class="ad">
+							<div class="info-top">
+								<div class="row1"></div>
+								<div class="row2"></div>
+								<div class="row3"></div>
+							</div>
+							<div class="info-content">
+							
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+	</div>
+  </body>
+</html>

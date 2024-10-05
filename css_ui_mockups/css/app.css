@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+	background: rgb(7,73,34);
+	background: radial-gradient(circle, rgba(6, 61, 29,1) 0%, rgba(4, 7, 5, 1) 100%);
+	background-attachment: fixed;
+	color: #f9f9f9;
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+#logo {
+	margin:20px 0px;
+}
+label {
+	font-weight: 400;
+}
+.progress-bar {
+	background-color: #00b57a;
+}
+
+.info {
+	padding:0px; margin:0px;
+	width:340px; min-height:300px;
+	position:relative;
+	overflow:hidden;
+}
+.info .info-top .row1 {
+	position:relative; overflow:hidden;
+	width:280px; height:20px; margin:0px;
+	background: #00b57a;
+	border-top-left-radius: 20px 20px;
+	border-top-right-radius: 20px 20px;
+}
+.info .info-top .row2 {
+	width:300px; height:20px; margin:0px;
+	position:relative; overflow:hidden;
+}
+.info .info-top .row2:after {
+  content: "";
+  position: absolute; right:0px;
+  margin: -20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* new */
+  box-shadow: 0 0 0 250px #00b57a;
+}
+.info .info-top .row2:before {
+  content: "";
+  position: absolute; left:0px;
+  width: 200px; height: 40px;
+  background: #00b57a;
+}
+.info .info-top .row3 {
+	width:340px; height:20px; margin:0px;
+	background: #00b57a;
+	border-top-right-radius: 20px 20px;
+}
+
+.info .info-content {
+	margin:0px; width:100%; min-height:280px;
+	background: #00b57a;
+	border-bottom-left-radius: 20px 20px;
+	border-bottom-right-radius: 20px 20px;
+	padding:0px 20px 20px 20px;
+}
+.info .info-content h3 {
+	margin-top:0px;
+}
+
+
+blockquote {
+    border:none;
+    margin-bottom:-30px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote span {
+font-size:0.9em;
+}
+blockquote span:before { 
+content: open-quote;
+font-weight: bold;
+font-size:50px;
+color:#fff;
+} 
+blockquote span:after { 
+content: close-quote;
+font-weight: bold;
+font-size:50px;
+color:#fff;
+  
+}
+
+
+
+@media only screen and (min-width: 800px) {
+  .info {
+	width:380px;
+  }
+  .info .info-top .row1 {
+	width:320px;
+  }
+  .info .info-top .row2 {
+	width:340px;
+  }
+  
+  .info .info-top .row2:after {
+  margin: -20px;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 0 0 250px #00b57a;
+  }
+  .info .info-top .row2:before {
+  width: 200px; height: 40px;
+  }
+  .info .info-top .row3 {
+	width:380px;
+  }
+  
+}
+
+#signup-form-slider {
+	overflow: hidden;
+}
+#signup-form-slider .form-slide {
+	display: inline-block;
+}
+.jobseekermatch {
+	margin:30px auto; min-height:200px;
+	padding:20px;
+	background: #00b57a;
+	border-radius: 20px;
+	text-align:center;
+}
